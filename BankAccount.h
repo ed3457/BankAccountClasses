@@ -6,7 +6,7 @@ class BankAccount
 private: 
 
 	string owner; 
-	float balance; 
+	float balance=0.0; 
 
 public:
 	void setOwner(string owner);
