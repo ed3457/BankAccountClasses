@@ -2,10 +2,23 @@
 //
 
 #include <iostream>
-
+#include "SavingAccount.h"
+#include "BankAccount.h"
 int main()
 {
-    std::cout << "Hello World!\n";
+	BankAccount ba1("Elon Musk", 1500000.0);
+
+	ba1.deposit(5000); 
+	cout << ba1.getBalance() << endl;
+	cout << ba1.getOwner() << endl; 
+
+	SavingAccount ba2("Bill Gates", 2000, 0.02);
+
+	ba2.withdraw(500);
+
+	cout << ba2.getBalance() << endl;
+	cout << ba2.getOwner() << endl;
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
