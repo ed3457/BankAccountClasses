@@ -15,10 +15,10 @@ public:
 	// void setBalance(float balance); we will not include as the balance is controlled by deposit and withdraw 
 	float getBalance();
 
-	//BankAccount(); not needed as we must know the balance and owner 
+	BankAccount();  
 	BankAccount(string owner, float balance); 
 
 	void deposit(float amount); 
-	void withdraw(float amount);
+	void virtual withdraw(float amount);
 };
 

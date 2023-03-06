@@ -6,19 +6,40 @@
 #include "BankAccount.h"
 int main()
 {
-	BankAccount ba1("Elon Musk", 1500000.0);
+	BankAccount ba1("Elon Musk", 1500.0);
 
-	ba1.deposit(5000); 
+	//ba1.deposit(5000); 
 	cout << ba1.getBalance() << endl;
 	cout << ba1.getOwner() << endl; 
 
 	SavingAccount ba2("Bill Gates", 2000, 0.02);
 
-	ba2.withdraw(500);
+	//ba2.withdraw(500);// early binding 
 
 	cout << ba2.getBalance() << endl;
 	cout << ba2.getOwner() << endl;
 
+	BankAccount* accounts[2];
+
+	accounts[0] = &ba1;
+	accounts[1] = &ba2;
+
+	for (int i = 0; i < 2;i++)
+	{
+		accounts[i]->withdraw(500);
+
+	}
+
+	cout << "=============================\n";
+	for (int i = 0; i < 2;i++)
+	{
+		cout << accounts[i]->getBalance() << endl;
+		cout << accounts[i]->getOwner() << endl;
+
+	}
+
+
+	
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

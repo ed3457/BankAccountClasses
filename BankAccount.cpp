@@ -16,6 +16,10 @@ float BankAccount::getBalance()
     return balance;
 }
 
+BankAccount::BankAccount()
+{
+}
+
 BankAccount::BankAccount(string owner, float balance)
 {
    // this->owner = owner;
