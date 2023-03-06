@@ -14,6 +14,8 @@ int main()
 
 	SavingAccount ba2("Bill Gates", 2000, 0.02);
 
+	BankAccount ba3("John Wick", 1000.0);
+
 	//ba2.withdraw(500);// early binding 
 
 	cout << ba2.getBalance() << endl;
