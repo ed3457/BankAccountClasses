@@ -10,21 +10,21 @@ int main()
 
 	//ba1.deposit(5000); 
 	cout << ba1.getBalance() << endl;
-	cout << ba1.getOwner() << endl; 
+	cout << ba1.getOwner() << endl;
 
 	SavingAccount ba2("Bill Gates", 2000, 0.02);
-
-	BankAccount ba3("John Wick", 1000.0);
 
 	//ba2.withdraw(500);// early binding 
 
 	cout << ba2.getBalance() << endl;
 	cout << ba2.getOwner() << endl;
 
-	BankAccount* accounts[2];
+	BankAccount** accounts = new BankAccount * [2];
 
-	accounts[0] = &ba1;
-	accounts[1] = &ba2;
+	accounts[0] = new BankAccount("Elon Musk", 1500.0);
+	accounts[1] = new SavingAccount("Bill Gates", 2000, 0.02);
+
+
 
 	for (int i = 0; i < 2;i++)
 	{
@@ -41,7 +41,7 @@ int main()
 	}
 
 
-	
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
