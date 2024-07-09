@@ -5,40 +5,65 @@
 #include "SavingAccount.h"
 #include "BankAccount.h"
 int main()
-{
-	BankAccount ba1("Elon Musk", 1500.0);
+{    
+	try
+	{
+		BankAccount ba1("Elon Musk", -1500.0);
 
-	//ba1.deposit(5000); 
-	cout << ba1.getBalance() << endl;
-	cout << ba1.getOwner() << endl;
+		cout << ba1.getBalance() << endl;
+		cout << ba1.getOwner() << endl;
+	}
 
-	SavingAccount ba2("Bill Gates", 2000, 0.02);
+	catch (int x)
+	{
+		if (x == 100)
+		{
+			// log the error as deposit error
+			cout << "Deposit is less than 0\n";
+			// if you have a windows app: messagebox.show("Deposit is less than 0\n");
+		}
+		else if (x == 200)
+		{
+			cout << "Account does not have enough!\n";
+
+		}
+
+	}
+	catch (underflow_error e)
+	{
+
+
+	}
+	//SavingAccount ba2("Bill Gates", 2000, 0.02);
 
 	//ba2.withdraw(500);// early binding 
 
-	cout << ba2.getBalance() << endl;
-	cout << ba2.getOwner() << endl;
+	//cout << ba2.getBalance() << endl;
+	//cout << ba2.getOwner() << endl;
 
-	BankAccount** accounts = new BankAccount * [2];
+	/*BankAccount** accounts = new BankAccount * [2];
+
+	accounts[0] = new BankAccount("Elon Musk", 1500.0);
+	accounts[1] = new SavingAccount("Bill Gates", 2000, 0.02);*/
+
+	/*BankAccount** accounts = new BankAccount * [2];
 
 	accounts[0] = new BankAccount("Elon Musk", 1500.0);
 	accounts[1] = new SavingAccount("Bill Gates", 2000, 0.02);
-
-
 
 	for (int i = 0; i < 2;i++)
 	{
 		accounts[i]->withdraw(500);
 
-	}
+	}*/
 
-	cout << "=============================\n";
+	/*cout << "=============================\n";
 	for (int i = 0; i < 2;i++)
 	{
 		cout << accounts[i]->getBalance() << endl;
 		cout << accounts[i]->getOwner() << endl;
 
-	}
+	}*/
 
 
 
