@@ -15,7 +15,11 @@ SavingAccount::SavingAccount(string owner, float balance, float annualInterestRa
 	setAnnualInterestRate(annualInterestRate);
 }
 
-void SavingAccount::withdraw(float amount)
+SavingAccount::SavingAccount()
+{
+}
+
+void SavingAccount::withdraw(float amount)// override 
 {
 	BankAccount::withdraw(amount + 50);
 }

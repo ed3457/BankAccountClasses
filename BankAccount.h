@@ -13,13 +13,13 @@ public:
 	void setOwner(string owner);
 	string getOwner();
 
-	// void setBalance(float balance); we will not include as the balance is controlled by deposit and withdraw 
+	void setBalance(float balance); 
 	float getBalance();
 
 	BankAccount();  
 	BankAccount(string owner, float balance); 
 
 	void deposit(float amount); 
-	void virtual withdraw(float amount);
+	void withdraw(float amount);
 };
 

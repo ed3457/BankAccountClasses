@@ -11,6 +11,11 @@ string BankAccount::getOwner()
     return owner;
 }
 
+void BankAccount::setBalance(float balance)
+{
+    this->balance = balance;
+}
+
 float BankAccount::getBalance()
 {
     return balance;
@@ -31,15 +36,16 @@ BankAccount::BankAccount(string owner, float balance)
 
 void BankAccount::deposit(float amount)
 {   // validate if the amount is larger than 0
-    if (amount < 0)
-        throw 100;
-    else
+    if (amount > 0)
+    
     balance = balance + amount;
 }
 
 void BankAccount::withdraw(float amount)
 {
     if (balance - amount < 0)
-        throw new underflow_error("You don't have enough!");
+        cout<<"You don't have enough!";
+    else
+
     balance = balance - amount;
 }
