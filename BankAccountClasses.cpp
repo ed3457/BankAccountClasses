@@ -5,15 +5,23 @@
 #include "SavingAccount.h"
 #include "BankAccount.h"
 #include "Bank.h"
-int main()
+
+
+void fun1()
 {
 
 	Bank Chase1;
 
 	Chase1.addBankAccount(AccountTypes::CheckingAccount);
 	Chase1.addBankAccount(AccountTypes::SavingsAccount);
+	Chase1.addBankAccount(AccountTypes::SuperSavingsAccount);
 
-	for (int i = 0; i < 2; i++)
-		Chase1.getAccount(i).withdraw(100);
+	Chase1.massWithdraw(50);
+	Chase1.printAccountInfo();
+}
+int main()
+{
+
+	fun1();
 
 }

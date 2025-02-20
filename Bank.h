@@ -1,8 +1,8 @@
 #pragma once
-enum AccountTypes { CheckingAccount, SavingsAccount };
+enum AccountTypes { CheckingAccount, SavingsAccount,SuperSavingsAccount };
 #include "BankAccount.h"
 #include "SavingAccount.h"
-
+#include "SuperSavings.h"
 class Bank
 {
 private:
@@ -17,5 +17,9 @@ public:
 	void setBankName(string bn);
 
 	string getBankName();
+
+	void massWithdraw(float amount); 
+	void printAccountInfo(); 
+	~Bank(); // Destructor 
 };
 

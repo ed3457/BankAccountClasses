@@ -20,6 +20,6 @@ public:
 	BankAccount(string owner, float balance); 
 
 	void deposit(float amount); 
-	void withdraw(float amount);
+	virtual void withdraw(float amount);
 };
 
